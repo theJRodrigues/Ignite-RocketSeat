@@ -4,15 +4,15 @@
 html{
   font-size: 62.5%;
 }
-
 @theme {
   --spacing: 10px;
   --font-sans: "Roboto", sans-serif;
-
+  
+  --color-*: initial;
+  --color-white: #fff;
   --color-green: #00875f;
   --color-green-light: #00b37e;
   --color-danger: #f75a68;
-
   --color-gray-100: #e1e1e6;
   --color-gray-200: #c4c4cc;
   --color-gray-300: #8d8d99;
@@ -20,7 +20,7 @@ html{
   --color-gray-500: #323238;
   --color-gray-600: #202024;
   --color-gray-700: #121214;
-
+  
   --text-sm: 1.2rem;
   --text-sm--line-height: 160%;
   --text-md: 1.4rem;
