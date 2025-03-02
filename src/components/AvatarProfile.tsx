@@ -6,8 +6,8 @@ interface AvatarProfileProps {
 
 const AvatarProfile = ({avatarUrl}: AvatarProfileProps) => {
   return (
-    <figure  className="size-6 p-0.5 bg-gray-600 border-3 border-green-light rounded-xl">
-          <img src={avatarUrl} alt="profile avatar" className='rounded-xl'/>
+    <figure  className="size-6 bg-gray-600 p-0.5 outline-2 outline-green-light rounded-xl">
+          <img src={avatarUrl} alt="profile avatar" className='rounded-xl size-full'/>
     </figure>
   )
 }

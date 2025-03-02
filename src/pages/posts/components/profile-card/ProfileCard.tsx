@@ -6,14 +6,14 @@ import EditProfileBtn from "../../../../components/EditProfileBtn";
 import profileImage from "../../../../assets/profile-img.svg";
 const ProfileCard = () => {
   return (
-    <aside className="w-full max-w-26 bg-gray-600 rounded-2xl pt-4 pb-3 px-3 relative overflow-hidden">
+    <aside className="w-full max-w-26 bg-gray-600 rounded-2xl overflow-hidden">
       <img
         src={profileCover}
         alt="background of profile card"
-        className="absolute top-0 left-0 w-full h-[7.2rem]"
+        className=" w-full h-[7.2rem]"
       />
-      <div className="text-center">
-        <figure className="relative  z-1 m-auto w-fit">
+      <div className="text-center -mt-3">
+        <figure className="m-auto w-fit relative z-1">
           <AvatarProfile avatarUrl={profileImage} />
         </figure>
 
@@ -22,8 +22,10 @@ const ProfileCard = () => {
           <p className="text-gray-300 text-md">UI Designer</p>
         </div>
       </div>
-      <hr className="w-[150%] relative -left-3 text-gray-500" />
-      <div className="text-center mt-2.5">
+
+      <hr className="w-full text-gray-500" />
+
+      <div className="p-3 text-center">
         <EditProfileBtn/>
       </div>
     </aside>
