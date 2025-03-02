@@ -22,9 +22,9 @@ html{
   --color-gray-700: #121214;
   
   --text-sm: 1.2rem;
-  --text-sm--line-height: 160%;
+  --text-sm--line-height: 1.6;
   --text-md: 1.4rem;
-  --text-md--line-height: 160%;
+  --text-md--line-height: 1.6;
   --text-lg: 1.6rem;
-  --text-lg--line-height: 160%;
+  --text-lg--line-height: 1.6;
 }
