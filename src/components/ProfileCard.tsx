@@ -1,9 +1,10 @@
 import React from "react";
-import profileCover from "../../../../assets/profile-cover.jpg";
-import AvatarProfile from "../../../../components/AvatarProfile";
-import EditProfileBtn from "../../../../components/EditProfileBtn";
+import ProfileAvatar from "./ProfileAvatar";
+import EditProfileBtn from "./EditProfileBtn";
+import profileImage from "../assets/profile-img.svg";
+import profileCover from "../assets/profile-cover.jpg";
+import ProfileInfo from "./ProfileInfo";
 
-import profileImage from "../../../../assets/profile-img.svg";
 const ProfileCard = () => {
   return (
     <aside className="w-full max-w-26 bg-gray-600 rounded-2xl overflow-hidden">
@@ -14,19 +15,18 @@ const ProfileCard = () => {
       />
       <div className="text-center -mt-3">
         <figure className="m-auto w-fit relative z-1">
-          <AvatarProfile avatarUrl={profileImage} />
+          <ProfileAvatar avatarUrl={profileImage} />
         </figure>
 
         <div className="my-2.5">
-          <h2 className="text-gray-100 font-bold text-lg">Leslie Alexander</h2>
-          <p className="text-gray-300 text-md">UI Designer</p>
+          <ProfileInfo name="Leslie Alexander" role="UI Designer" />
         </div>
       </div>
 
       <hr className="w-full text-gray-500" />
 
       <div className="p-3 text-center">
-        <EditProfileBtn/>
+        <EditProfileBtn />
       </div>
     </aside>
   );

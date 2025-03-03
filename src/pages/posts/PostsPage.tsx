@@ -1,10 +1,10 @@
 import React from "react";
-import ProfileCard from "./components/profile-card/ProfileCard";
-import Post from "./components/posts/Post";
+import Post from "../../components/Post";
+import ProfileCard from "../../components/ProfileCard";
 
 const PostsPage = () => {
   return (
-    <main className="text-white flex justify-center gap-2  my-4">
+    <main className="text-white flex justify-center items-start gap-2  my-4">
       <ProfileCard />
       <Post />
     </main>

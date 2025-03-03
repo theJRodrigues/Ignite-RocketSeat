@@ -28,3 +28,7 @@ html{
   --text-lg: 1.6rem;
   --text-lg--line-height: 1.6;
 }
+
+.shadow-btn{
+ @apply hover:shadow-[0px_0px_13px_-1px_rgba(0,179,126,0.72)] duration-50
+}
