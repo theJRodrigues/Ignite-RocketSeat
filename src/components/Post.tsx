@@ -3,13 +3,16 @@ import ProfileAvatar from "./ProfileAvatar";
 import ProfileInfo from "./ProfileInfo";
 
 import avatarImg from "../assets/jane-cooper-avatar.svg";
+import NewCommentForm from "./NewCommentForm";
+import CommentBox from "./CommentBox";
 
 const Post = () => {
+  const date = new Date();
   return (
     <article className="w-full max-w-83 bg-gray-600 rounded-2xl p-4">
       <header className="flex items-center gap-2">
         <figure>
-          <ProfileAvatar avatarUrl={avatarImg} />
+          <ProfileAvatar avatarUrl={avatarImg} hasBorder />
         </figure>
         <div className="grow-1">
           <ProfileInfo name="Jane Cooper" role="Dev Front-End" />
@@ -32,10 +35,8 @@ const Post = () => {
       <hr className="w-full text-gray-500" />
       <footer className="space-y-2 mt-2 text-gray-100 text-lg">
         <h2 className=" font-bold ">Deixe seu feedback</h2>
-        <form>
-          <textarea className="peer resize-none w-full outline-none bg-gray-700 p-2 rounded-xl border border-gray-700 focus:border-green-light duration-50" placeholder="Escreva um comentário..."/>
-          <button className="font-bold py-1 cursor-pointer px-2.5 rounded-xl bg-green hover:bg-green-light shadow-btn hidden peer-focus:block mt-2">Publicar</button>
-        </form>
+        <NewCommentForm />
+        <CommentBox publicationDate={date} />
       </footer>
     </article>
   );

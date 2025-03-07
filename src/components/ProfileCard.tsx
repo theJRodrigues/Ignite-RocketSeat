@@ -15,7 +15,7 @@ const ProfileCard = () => {
       />
       <div className="text-center -mt-3">
         <figure className="m-auto w-fit relative z-1">
-          <ProfileAvatar avatarUrl={profileImage} />
+          <ProfileAvatar avatarUrl={profileImage} hasBorder/>
         </figure>
 
         <div className="my-2.5">
