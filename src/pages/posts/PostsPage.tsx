@@ -4,7 +4,7 @@ import ProfileCard from "../../components/ProfileCard";
 import useGetData from "../../hooks/useGetData";
 
 import avatarUrl from "../../assets/profile-avatar.png";
-import CommentBox from "../../components/CommentBox";
+import CommentBox from "../../components/Comments/CommentBox";
 
 type PostType = {
   id: number;
@@ -13,26 +13,14 @@ type PostType = {
   body: string;
 };
 
-type CommentsType = {
-  id: number;
-  postId: number;
-  name: string;
-  email: string;
-  body: string;
-};
+
 
 const PostsPage = () => {
   const {
     data: posts,
     isLoading: isLoadingPosts,
     error: errorPosts,
-  } = useGetData<PostType[]>("posts?_limit=50", "posts");
-
-  const {
-    data: comments,
-    isLoading: isLoadingComments,
-    error: errorComments,
-  } = useGetData<CommentsType[]>("comments", "comments");
+  } = useGetData<PostType[]>("posts?_limit=30", "posts");
 
   return (
     <main className="text-white flex justify-center items-start gap-2  my-4">
@@ -48,33 +36,13 @@ const PostsPage = () => {
           </p>
         ) : (
           posts?.map((post) => (
-            <>
             <Post
-            postId={post.id}
+              postId={post.id}
               key={post.id}
               content={post.body}
               avatarUrl={avatarUrl}
+              userId= {post.userId}
             />
-            <section>
-              {isLoadingComments ? (
-                <p>Carregando...</p>
-              ) : errorComments ? (
-                <p>Erro ao carregar os comentários</p>
-              ) : comments?.map((comment) => (
-                comment.postId === post.id &&
-                <CommentBox
-                key={comment.id}
-                  postId={post.id}
-                  name={comment.name}
-                  body={comment.body}
-                  publicationDate={new Date()}
-                  avatarUrl={avatarUrl}
-                  likes={Math.floor(Math.random() * 100)}
-                />
-              ))}
-            </section>
-            </>
-            
           ))
         )}
       </div>
