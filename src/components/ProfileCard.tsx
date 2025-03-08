@@ -1,11 +1,10 @@
 import React from "react";
 import ProfileAvatar from "./ProfileAvatar";
 import EditProfileBtn from "./EditProfileBtn";
-import profileImage from "../assets/profile-img.svg";
 import profileCover from "../assets/profile-cover.jpg";
 import ProfileInfo from "./ProfileInfo";
 
-const ProfileCard = () => {
+const ProfileCard = ({avatarUrl}) => {
   return (
     <aside className="w-full max-w-26 bg-gray-600 rounded-2xl overflow-hidden">
       <img
@@ -15,7 +14,7 @@ const ProfileCard = () => {
       />
       <div className="text-center -mt-3">
         <figure className="m-auto w-fit relative z-1">
-          <ProfileAvatar avatarUrl={profileImage} hasBorder/>
+          <ProfileAvatar avatarUrl={avatarUrl} hasBorder/>
         </figure>
 
         <div className="my-2.5">
