@@ -1,10 +1,8 @@
-import React from "react";
-import Post from "../../components/Post";
+import Post from "../../components/Post/Post";
 import ProfileCard from "../../components/ProfileCard";
 import useGetData from "../../hooks/useGetData";
 
 import avatarUrl from "../../assets/profile-avatar.png";
-import CommentBox from "../../components/Comments/CommentBox";
 
 type PostType = {
   id: number;
@@ -32,7 +30,7 @@ const PostsPage = () => {
           </p>
         ) : errorPosts ? (
           <p className="w-full max-w-83 bg-gray-600 rounded-2xl p-4 ">
-            Erro ao carregar os posts
+            Erro ao carregar os posts, tente novamente mais tarde
           </p>
         ) : (
           posts?.map((post) => (

@@ -4,7 +4,10 @@ import EditProfileBtn from "./EditProfileBtn";
 import profileCover from "../assets/profile-cover.jpg";
 import ProfileInfo from "./ProfileInfo";
 
-const ProfileCard = ({avatarUrl}) => {
+interface ProfileCard{
+  avatarUrl: string
+}
+const ProfileCard = ({avatarUrl}: ProfileCard) => {
   return (
     <aside className="w-full max-w-26 bg-gray-600 rounded-2xl overflow-hidden">
       <img

@@ -9,7 +9,7 @@ const useGetData = <T>(url: 'posts' | 'comments' | string, queryKey: string) => 
       return response.data;
     },
     refetchOnWindowFocus: false,
-    refetchInterval: 1000 * 60,
+    // refetchInterval: 1000 * 60,
   });
   return { data, isLoading, error };
 };
