@@ -9,25 +9,32 @@ const NewCommentFormSchemma = z.object({
 
 type NewCommentForm = z.infer<typeof NewCommentFormSchemma>;
 
+
 interface NewCommentFormProps{
   postId: number
 }
 const NewCommentForm = ({postId}: NewCommentFormProps) => {
-  const mutation = useMutationsDatas("comments");
-
-  const {register, handleSubmit, formState: { errors }, resetField, watch,}= 
-    useForm<NewCommentForm>({
-      resolver: zodResolver(NewCommentFormSchemma),
-    });
+  const mutation = useMutationsDatas("posts");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    resetField,
+    watch,
+  } = useForm<NewCommentForm>({
+    resolver: zodResolver(NewCommentFormSchemma),
+  });
 
   function onSubmit(data: NewCommentForm) {
+    const idNewComment = Math.floor(Math.random() * 1000)
     const newData = {
+      id: idNewComment,
       postId: postId,
       name: "Nome Teste",
       email: "email@teste.com",
       body: data.newComment
     }
-    mutation.mutate({newData: newData, method:'post', url: 'comments'} )
+    mutation.mutate({newData, method:'post', url: 'comments'} )
     resetField("newComment");
   }
 

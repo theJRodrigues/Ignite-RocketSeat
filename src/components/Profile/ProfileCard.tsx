@@ -1,8 +1,9 @@
 import React from "react";
+import profileCover from "/src/assets/profile-cover.jpg";
 import ProfileAvatar from "./ProfileAvatar";
-import EditProfileBtn from "./EditProfileBtn";
-import profileCover from "../assets/profile-cover.jpg";
 import ProfileInfo from "./ProfileInfo";
+import EditProfileBtn from "./EditProfileBtn";
+
 
 interface ProfileCard{
   avatarUrl: string
