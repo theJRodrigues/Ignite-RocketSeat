@@ -1,4 +1,3 @@
-import React from "react";
 import profileCover from "/src/assets/profile-cover.jpg";
 import ProfileAvatar from "./ProfileAvatar";
 import ProfileInfo from "./ProfileInfo";
@@ -8,6 +7,7 @@ import EditProfileBtn from "./EditProfileBtn";
 interface ProfileCard{
   avatarUrl: string
 }
+
 const ProfileCard = ({avatarUrl}: ProfileCard) => {
   return (
     <aside className="w-full max-w-26 bg-gray-600 rounded-2xl overflow-hidden">

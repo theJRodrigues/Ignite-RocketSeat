@@ -12,7 +12,6 @@ const CommentBox = ({ comments }: NewCommentBoxProps) => {
   const randomLikes = () => Math.floor(Math.random() * 10);
 
   const commentsReverse = comments?.slice(0).reverse()
-  console.log(commentsReverse)
   return (
     <>
       {commentsReverse?.map((comment) => (
@@ -23,7 +22,7 @@ const CommentBox = ({ comments }: NewCommentBoxProps) => {
 
           <div className="w-full space-y-2">
             <section className="rounded-xl bg-[#29292E] p-2 space-y-2">
-              <CommentHeader name={comment.name} />
+              <CommentHeader name={comment.name} commentId={comment.id}/>
               <main className="text-md text-gray-100">
                 <p>{comment.body}</p>
               </main>

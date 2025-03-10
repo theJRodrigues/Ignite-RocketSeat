@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import useMutationsDatas from "../../../hooks/useMutationsDatas";
+import useMutationData from "../../../hooks/useMutationData";
 
 const NewCommentFormSchemma = z.object({
   newComment: z.string().nonempty("O comentário não pode ser vazio"),
@@ -9,25 +9,34 @@ const NewCommentFormSchemma = z.object({
 
 type NewCommentForm = z.infer<typeof NewCommentFormSchemma>;
 
-interface NewCommentFormProps{
-  postId: number
+interface NewCommentFormProps {
+  postId: number;
 }
-const NewCommentForm = ({postId}: NewCommentFormProps) => {
-  const mutation = useMutationsDatas("comments");
+const NewCommentForm = ({ postId }: NewCommentFormProps) => {
+  const mutation = useMutationData("comments");
 
-  const {register, handleSubmit, formState: { errors }, resetField, watch,}= 
-    useForm<NewCommentForm>({
-      resolver: zodResolver(NewCommentFormSchemma),
-    });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    resetField,
+    watch,
+  } = useForm<NewCommentForm>({
+    resolver: zodResolver(NewCommentFormSchemma),
+  });
 
   function onSubmit(data: NewCommentForm) {
     const newData = {
       postId: postId,
       name: "Nome Teste",
       email: "email@teste.com",
-      body: data.newComment
-    }
-    mutation.mutate({newData: newData, method:'post', url: 'comments'} )
+      body: data.newComment,
+    };
+    mutation.mutate({ 
+      newData: newData, 
+      method: "post", 
+      url: "comments" });
+    
     resetField("newComment");
   }
 

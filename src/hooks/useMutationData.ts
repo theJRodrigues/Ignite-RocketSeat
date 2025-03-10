@@ -3,7 +3,7 @@ import api from "../api/api";
 
 interface MutationProps {
   newData: NewData;
-  method: "post" | "delete" | "put" | "patch";
+  method: "post" | "put" | "patch";
   url: string;
 }
 
@@ -13,25 +13,23 @@ interface NewData {
   email: string;
   body: string;
 }
-const useMutationsDatas = (queryKey: string) => {
+
+const useMutationData = (queryKey: string) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
-    mutationFn: ({ newData, method, url }: MutationProps) => {
-      if (method === "delete") return api[method](url);
-
+    mutationFn: async ({ newData, method, url }: MutationProps) => {
       return api[method](url, newData);
     },
     onError: (error) => {
       return error;
     },
     onSuccess: (data) => {
-      queryClient.setQueryData([queryKey], (oldData: []) => [
-        ...oldData,
-        data.data,
-      ]);
+      queryClient.setQueryData([queryKey], (oldData: []) => {
+        return [...oldData, data.data];
+      });
     },
   });
   return mutation;
 };
-export default useMutationsDatas;
+export default useMutationData;
