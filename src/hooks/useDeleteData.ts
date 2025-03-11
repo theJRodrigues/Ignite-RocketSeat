@@ -10,6 +10,7 @@ const useDeleteData = (queryKey: string) => {
   const queryClient = useQueryClient();
   const deleteMutation = useMutation({
     mutationFn: async ({ url, deleteId }: MutationProps) => {
+      void deleteId;
       return api.delete(url)
     },
     onError: (error) => {

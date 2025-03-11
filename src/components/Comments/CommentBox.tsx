@@ -9,9 +9,10 @@ interface NewCommentBoxProps {
 }
 
 const CommentBox = ({ comments }: NewCommentBoxProps) => {
+  const commentsReverse = comments?.slice(0).reverse()
   const randomLikes = () => Math.floor(Math.random() * 10);
 
-  const commentsReverse = comments?.slice(0).reverse()
+  
   return (
     <>
       {commentsReverse?.map((comment) => (

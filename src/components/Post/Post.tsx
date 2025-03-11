@@ -3,7 +3,7 @@ import { IComments, IPost, IUser } from "../../pages/posts/PostsPage";
 import CommentBox from "../Comments/CommentBox";
 import ProfileAvatar from "../Profile/ProfileAvatar";
 import ProfileInfo from "../Profile/ProfileInfo";
-import NewCommentForm from "./components/NewCommentForm";
+import NewCommentForm from "./NewCommentForm";
 
 interface ICommentsInfos {
   comments: IComments[] | undefined;
