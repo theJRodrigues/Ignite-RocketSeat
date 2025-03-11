@@ -55,7 +55,7 @@ const PostsPage = () => {
     data: comments,
     error: errorComments,
     isLoading: isLoadingComments,
-  } = useGetData<IComments[]>("comments?_limit=100", "comments");
+  } = useGetData<IComments[]>("comments?_limit=150", "comments");
 
   const {
     data: users,
