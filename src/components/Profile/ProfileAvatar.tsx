@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ProfileAvatarProps {
   avatarUrl: string;
   hasBorder?: boolean;

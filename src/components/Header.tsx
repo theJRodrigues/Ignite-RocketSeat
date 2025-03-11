@@ -1,4 +1,3 @@
-import React from 'react'
 import igniteLogo from '/assets/ignite-logo.svg'
 
 const Header = () => {

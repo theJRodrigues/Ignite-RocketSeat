@@ -25,7 +25,7 @@ interface PostProps {
 
 const Post = ({ avatarUrl, postInfos, postComments, postUser }: PostProps) => {
   const { user, errorUser, isLoadingUser } = postUser;
-  const { id: postId, userId, body } = postInfos;
+  const { id: postId, body } = postInfos;
   const { comments, errorComments, isLoadingComments } = postComments;
   const { contentDate, titleDate } = useRandomDate();
 
