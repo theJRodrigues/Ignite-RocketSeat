@@ -72,9 +72,11 @@ const PostsPage = () => {
 
   return (
     <main className="text-white flex justify-center items-start gap-2  my-4">
+      <section className="sticky top-12">
       <ProfileCard avatarUrl={avatarUrl} />
+      </section>
 
-      <div className="flex flex-col gap-3 w-full max-w-83 text-lg text-gray-100">
+      <section className="flex flex-col gap-3 w-full max-w-83 text-lg text-gray-100">
         {isLoadingPosts ? (
           <p className="w-full max-w-83 bg-gray-600 rounded-2xl p-4">
             Carregando...
@@ -102,7 +104,7 @@ const PostsPage = () => {
             />
           ))
         )}
-      </div>
+      </section>
     </main>
   );
 };
